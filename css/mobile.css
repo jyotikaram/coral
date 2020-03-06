@@ -6,6 +6,18 @@
   .sub-title {
     font-size: 15px;
   }
+
+  .two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .background-white {
+    background-color: white;
+    width: 100%;
+    margin: 4% auto;
+    padding-bottom: 10%;
+  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 601px) {
@@ -16,6 +28,11 @@
   .sub-title {
     font-size: 20px;
   }
+
+  .two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 901px) {
@@ -25,5 +42,10 @@
 
   .sub-title {
     font-size: 25px;
+  }
+
+  .two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
