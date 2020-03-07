@@ -1,5 +1,6 @@
 /* font-family: 'Montserrat', sans-serif;
-font-family: 'Quicksand', sans-serif; */
+font-family: 'Quicksand', sans-serif;
+'Dosis'*/
 
 /* coral: rgba(245,123,81, .5)  #f57b51 */
 
@@ -28,7 +29,7 @@ body {
 .dropdown {
   float: left;
   overflow: hidden;
-  width: 25%;
+  width: 16.66%;
   text-align: center;
 }
 
@@ -114,7 +115,7 @@ body {
 	width:  100%;
   background-attachment: fixed;
   background-size: cover;
-  background-image: url("../images/01.jpg");
+  background-image: url("../images/01.png");
   background-repeat: no-repeat;
   /* background-size: auto; */
 }
