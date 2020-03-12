@@ -84,7 +84,7 @@ body {
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   box-shadow: inset 400px 0 0 0 #3282b8;
-    color: #fff;
+  color: #fff;
 }
 
 .dropdown-content {
@@ -159,33 +159,6 @@ a:link {
   color: white;
   padding-bottom: 1%;
   font-family: 'Montserrat', sans-serif;
-}
-
-.video-intro {
-  margin-top: 4%;
-}
-
-#intro-video {
-  width: 80%;
-  height: auto;
-  /* max-width: 1200px; */
-  border-radius: 25px;
-  background: url(../images/001.gif);
-  padding: 20px;
-  margin: 0 auto;
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-  background-size: cover;
-}
-
-#test-video {
-  margin-top: 12%;
-  margin-bottom: 38%;
-  margin-right: 15%;
-  text-align: right;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
-  color: #3282b8;
 }
 
 /* team img */
@@ -381,3 +354,17 @@ a:link {
 #back-to-top:hover {
   background-color: white;
   color: #3282b8;
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.three-column IMG {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
