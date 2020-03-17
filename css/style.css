@@ -11,7 +11,12 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+a {
+  color: #3282b8;
+}
+.footer-li a {
+  color: #f57b51;
+}
 .navbar {
   overflow: hidden;
   /* background-color: #f1935c; */
