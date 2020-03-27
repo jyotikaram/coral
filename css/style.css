@@ -169,7 +169,9 @@ a:link {
 /* team img */
 .two-column-wrapper {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr 0.9fr 1.1fr;
+  grid-template-columns:  0.95fr 1.05fr  0.95fr 1.05fr;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .profile-image-wrapper img {
@@ -187,6 +189,9 @@ a:link {
   color: #3282b8;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
+}
+.profile-content-wrapper em {
+  opacity: .6;
 }
 
 .center-title {
@@ -323,7 +328,7 @@ a:link {
 .main-text IMG {
   max-width: 700px;
   display: block;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 
 .add-text {
