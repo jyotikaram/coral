@@ -170,20 +170,21 @@ a:link {
 .two-column-wrapper {
   display: grid;
   grid-template-columns:  0.95fr 1.05fr  0.95fr 1.05fr;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .profile-image-wrapper img {
-  width: 250px;
+  width: 240px;
   float:right;
-  margin: 30px auto;
+  margin: 5% auto;
   position: relative;
 }
 
 .profile-content-wrapper {
-  padding: 30px;
-  margin-top: 5%;
+  padding-left: 25px;
+  padding-right: 35px;
+  margin-bottom: 15%;
 }
 .profile-content-wrapper h1 {
   color: #3282b8;

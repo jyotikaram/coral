@@ -18,6 +18,17 @@
     margin: 4% auto;
     padding-bottom: 10%;
   }
+
+  .dropdown .dropbtn {
+    font-size: 10px;
+  }
+  .dropbtn-active {
+    font-size: 10px;
+  }
+  .navbar {
+    margin-left: -1%;
+    margin-right: 0%;
+  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 601px) {
@@ -33,6 +44,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .dropdown .dropbtn {
+    font-size: 12px;
+  }
+  .dropbtn-active {
+    font-size: 12px;
+  }
+  .navbar {
+    margin-left: -1%;
+    margin-right: 0%;
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 901px) {
@@ -47,5 +69,15 @@
   .two-column-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  .dropdown .dropbtn {
+    font-size: 18px;
+  }
+  .dropbtn-active {
+    font-size: 18px;
+  }
+  .navbar {
+    margin-left: -1%;
+    margin-right: 0%;
   }
 }
