@@ -29,6 +29,15 @@
     margin-left: -1%;
     margin-right: 0%;
   }
+  .dropdown-content {
+    margin-left: 1%;
+  }
+  .navbar a {
+    font-size: 10px;
+  }
+  .dropdown-content a {
+    padding: 4px 6px;
+  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 601px) {
@@ -55,6 +64,15 @@
     margin-left: -1%;
     margin-right: 0%;
   }
+  .dropdown-content {
+    margin-left: 2%;
+  }
+  .navbar a {
+    font-size: 10px;
+  }
+  .dropdown-content a {
+    padding: 6px 8px;
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 901px) {
@@ -79,5 +97,15 @@
   .navbar {
     margin-left: -1%;
     margin-right: 0%;
+  }
+
+  .dropdown-content {
+    margin-left: 3%;
+  }
+  .navbar a {
+    font-size: 12px;
+  }
+  .dropdown-content a {
+    padding: 8px 10px;
   }
 }
