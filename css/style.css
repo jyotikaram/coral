@@ -401,7 +401,7 @@ a:link {
   font-size: 1em;
   letter-spacing: 2px;
   overflow: hidden;
-  background: linear-gradient(90deg, #000, #fff, #000);
+  background: linear-gradient(90deg, #000, #000, #000);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 9s linear infinite;
