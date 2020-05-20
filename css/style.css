@@ -13,6 +13,11 @@ body {
   font-size: 18px;
   line-height: 1.5;
 }
+
+p strong {
+  font-weight: bold;
+}
+
 a {
   color: #3282b8;
 }
@@ -46,6 +51,11 @@ a {
   text-align: center;
 }
 
+.dropdown a {
+  float: none;
+  color: #3282b8;
+}
+
 .dropbtn-active {
   font-size: 20px;
   border: none;
@@ -65,6 +75,10 @@ a {
 	transition: all ease 0.8s;
   /* transition-duration: 0.4s; */
   margin-top: 3%;
+}
+
+.dropbtn-active a {
+  color: white;
 }
 
 .dropdown .dropbtn {
@@ -111,6 +125,7 @@ a {
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: 100%;
 }
 
 .dropdown-content a:hover {
@@ -215,7 +230,8 @@ a:link {
   background-color: white;
   width: 80%;
   margin: 4% auto;
-  padding-bottom: 10%;
+  padding-bottom: 6.5%;
+  margin-bottom: 10%;
 }
 
 /* coral reef page */
@@ -398,7 +414,8 @@ a:link {
   position: relative;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.5em;
+  text-align: center;
   letter-spacing: 2px;
   overflow: hidden;
   background: linear-gradient(90deg, #000, #000, #000);
@@ -406,7 +423,7 @@ a:link {
   background-size: 80%;
   animation: animate 9s linear infinite;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: rgba(50, 130, 184, 0.8);
 }
 
 @keyframes animate {

@@ -1,0 +1,11 @@
+.list {
+  list-style: inside;
+  /* color: #3282b8; */
+}
+
+ul .strong {
+  font-weight: bold;
+}
+li strong {
+  font-weight: bold;
+}

@@ -11,7 +11,8 @@ body {
   flex-flow: column nowrap;
 }
 ul {
-  list-style: none
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .flex-rw {
