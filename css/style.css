@@ -115,7 +115,7 @@ a {
   /* min-width: 160px; */
   margin-left: 5%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 10;
 }
 
 .dropdown-content a {
@@ -433,4 +433,39 @@ a:link {
   100% {
     background-position: 500%;
   }
+}
+
+/* card */
+.card {
+  display: grid;
+  grid-template-columns:  0.95fr 1.05fr  0.95fr 1.05fr;
+  margin: 8%;
+}
+
+.container {
+  border: 3px solid #3282b8;
+  opacity: .9;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 10%;
+}
+
+.top {
+  padding: 1px;
+  background: #3282b8;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.top h1 {
+  margin: 2%;
+}
+
+div.content {
+  background: white;
+}
+
+.content {
+  padding: 10px;
+  padding: 2.5% 10%;
 }

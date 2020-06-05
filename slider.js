@@ -1,118 +1,119 @@
-window.onload = function() {
-  var slider = new ESlider("#slider-1", [
-    "images/gif/01.gif",
-    "images/gif/02.gif",
-    "images/gif/03.gif",
-    "images/gif/04.gif",
-    "images/gif/05.gif"
-  ]);
-}
+var $a=$(".buttons a");
+	var $s=$(".buttons span");
+	var cArr=["p5","p4","p3","p2","p1"];
+	var index=0;
+	$(".next").click(
+		function(){
+		nextimg();
+		}
+	)
+	$(".prev").click(
+		function(){
+		previmg();
+		}
+	)
+	//上一张
+	function previmg(){
+		cArr.unshift(cArr[4]);
+		cArr.pop();
+		//i是元素的索引，从0开始
+		//e为当前处理的元素
+		//each循环，当前处理的元素移除所有的class，然后添加数组索引i的class
+		$(".list li").each(function(i,e){
+			$(e).removeClass().addClass(cArr[i]);
+		})
+		index--;
+		if (index<0) {
+			index=4;
+		}
+		show();
+	}
 
-/*
-    Name: ESlider v1.0
-    Author: Evyatar Daud
-*/
+	//下一张
+	function nextimg(){
+		cArr.push(cArr[0]);
+		cArr.shift();
+		$(".list li").each(function(i,e){
+			$(e).removeClass().addClass(cArr[i]);
+		})
+		index++;
+		if (index>4) {
+			index=0;
+		}
+		show();
+	}
 
-var ESlider = function(slider, images) {
-  /* Function: Get Element by Selector */
-  var _ = function(selector) {
-    return document.querySelector(selector);
-  }
+	//通过底下按钮点击切换
+	$a.each(function(){
+		$(this).click(function(){
+			var myindex=$(this).index();
+			var b=myindex-index;
+			if(b==0){
+				return;
+			}
+			else if(b>0) {
+				/*
+				 * splice(0,b)的意思是从索引0开始,取出数量为b的数组
+				 * 因为每次点击之后数组都被改变了,所以当前显示的这个照片的索引才是0
+				 * 所以取出从索引0到b的数组,就是从原本的这个照片到需要点击的照片的数组
+				 * 这时候原本的数组也将这部分数组进行移除了
+				 * 再把移除的数组添加的原本的数组的后面
+				 */
+				var newarr=cArr.splice(0,b);
+				cArr=$.merge(cArr,newarr);
+				$(".list li").each(function(i,e){
+				$(e).removeClass().addClass(cArr[i]);
+				})
+				index=myindex;
+				show();
+			}
+			else if(b<0){
+				/*
+				 * 因为b<0,所以取数组的时候是倒序来取的,也就是说我们可以先把数组的顺序颠倒一下
+				 * 而b现在是负值,所以取出索引0到-b即为需要取出的数组
+				 * 也就是从原本的照片到需要点击的照片的数组
+				 * 然后将原本的数组跟取出的数组进行拼接
+				 * 再次倒序,使原本的倒序变为正序
+				 */
+				cArr.reverse();
+				var oldarr=cArr.splice(0,-b)
+				cArr=$.merge(cArr,oldarr);
+				cArr.reverse();
+				$(".list li").each(function(i,e){
+				$(e).removeClass().addClass(cArr[i]);
+				})
+				index=myindex;
+				show();
+			}
+		})
+	})
 
-  /* Function: Get All Elements by Selector */
-  var __ = function(selector) {
-    return document.querySelectorAll(selector);
-  }
+	//改变底下按钮的背景色
+	function show(){
+			$($s).eq(index).addClass(".list blue").parent().siblings().children().removeClass(".list blue");
+	}
 
-  /* Declare class variables */
-  this.slider = _(slider);
-  this.images = images;
-  this.slides = "";
-  this.currentSlide;
+	//点击class为p2的元素触发上一张照片的函数
+	$(document).on("click",".p2",function(){
+		previmg();
+		return false;//返回一个false值，让a标签不跳转
+	});
 
-  /* Add ESlider class to the slider */
-  this.slider.classList.add("ESlider");
+	//点击class为p4的元素触发下一张照片的函数
+	$(document).on("click",".p4",function(){
+		nextimg();
+		return false;
+	});
 
-  /* Create slides */
-  this.slides = "";
-  this.bulks = "<div class='ESlider-bulks-container'>";
-  this.images.forEach(function(image, index) {
-    this.slides += "<img class='ESlider-slide ESlider-slide-" + (index+1) + "' src='" + image + "' />";
-    this.bulks += "<span class='ESlider-bulk' data-slide-id='"+ (index+1) + "'><img src='" + image + "' class='ESlider-thumbnail' /></span>";
-  }.bind(this));
+	//			鼠标移入box时清除定时器
+	$(".box").mouseover(function(){
+		clearInterval(timer);
+	})
 
-  /* Set slides */
-  this.bulks += "</div>";
-  this.contronls = "<span class='ESlider-previous'></span><span class='ESlider-next'></span>";
-  this.slider.innerHTML += this.slides + this.bulks + this.contronls;
+	//			鼠标移出box时开始定时器
+	$(".box").mouseleave(function(){
+		timer=setInterval(nextimg,4000);
+	})
 
-  /* Function: Set Slider Auto Sliding */
-  this.interval = function() {
-    this.autoSlide = setInterval(function() {
-      this.next();
-    }.bind(this), 9000);
-  }.bind(this);
-
-  /* Function: Change Slide */
-  this.setSlide = function(id) {
-    clearInterval(this.autoSlide);
-    /* hide current slide */
-    if (_(slider + " .ESlider-active-slide") != null)
-      _(slider + " .ESlider-active-slide").classList.remove("ESlider-active-slide");
-
-    /* reset active bulk */
-    if (_(slider + " .ESlider-active-bulk") != null)
-      _(slider + " .ESlider-active-bulk").classList.remove("ESlider-active-bulk");
-
-    /* show new slide */
-    _(slider + " .ESlider-slide-" + id).classList.add("ESlider-active-slide");
-    _(slider + " .ESlider-bulk[data-slide-id='" + id + "']").classList.add("ESlider-active-bulk");
-    _(slider).style.height = _(slider + " .ESlider-slide-" + id).clientHeight + "px";
-
-    this.currentSlide = id;
-
-    this.interval();
-  }
-
-  /* Function: Next Slide */
-  this.next = function() {
-    if (this.currentSlide == this.images.length)
-      this.currentSlide = 1;
-
-    else
-      this.currentSlide++;
-
-    this.setSlide(this.currentSlide);
-  }
-
-  /* Function: Previous Slide */
-  this.previous = function() {
-    if (this.currentSlide == 1)
-      this.currentSlide = this.images.length;
-
-    else
-      this.currentSlide--;
-
-    this.setSlide(this.currentSlide);
-  }
-
-  /* Set Bulks event listeners */
-  var bulks = __(slider + " .ESlider-bulk");
-  for (var i = 0; i < bulks.length; i++) {
-    bulks[i].addEventListener("click", function(e) {
-      var slideID = e.target.dataset.slideId;
-      this.setSlide(slideID);
-    }.bind(this));
-  }
-
-  _(slider + " .ESlider-previous").addEventListener("click", function(e) {
-    this.previous();
-  }.bind(this));
-
-  _(slider + " .ESlider-next").addEventListener("click", function(e) {
-    this.next();
-  }.bind(this));
-
-  /* Set First Slide */
-  this.setSlide(1);
-}
+	//			进入页面自动开始定时器
+	timer=setInterval(nextimg,4000);

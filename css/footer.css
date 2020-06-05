@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
 }
-ul {
+.flex-rw ul {
   list-style: none;
   font-family: 'Montserrat', sans-serif;
 }
@@ -19,6 +19,14 @@ ul {
   display: flex;
   flex-flow: row wrap;
   padding-bottom: 1.5%;
+}
+
+.flex-rw li {
+  display: grid;
+  position: inherit;
+  list-style: inherit;
+  opacity: inherit;
+  transition: none;
 }
 
 footer {
@@ -60,6 +68,12 @@ footer {
   margin-left: auto;
   margin-right: auto;
   max-width: 100px;
+}
+
+img.umlogo {
+  width: 30%;
+  height: auto;
+  float: none;
 }
 
 .footer-li {
